@@ -26,7 +26,7 @@ function App() {
       window.location.reload()
     }
     axios.post(`https://api.ultramsg.com/instance46986/messages/chat?token=whq8hu6sl95rpc4b&to=+91${phone}&body=Hi ${name} \n \n
-    Thanks for shopping with D_PARADISE. It was pleasure serving you. In order to serve you better, give us some ratings and also follow our instagram handle at https://www.instagram.com/d_paradise9/ or @d_paradise9. \n \n
+    Thanks for shopping with D_PARADISE. It was pleasure serving you. In order to serve you better, give us some ratings and also follow our instagram handle at https://www.instagram.com/d_paradise9/. \n \n
     Link for the location and review - https://g.page/r/CefxVUYrn4_8EBM/review`,
   {headers: {  
     'Content-Type': 'application/x-www-form-urlencoded'
