@@ -37,7 +37,7 @@ function App() {
   }
   return (
     <div className="App">
-      <img src='https://image3.mouthshut.com/images/imagesp/925012044s.jpg' style={{maxWidth: "90%", maxHeight: "50%"}}></img>
+      <img src='https://img.freepik.com/free-vector/illustrated-woman-working-customer-support_23-2148942144.jpg?w=1000' style={{maxWidth: "45%", maxHeight: "50%"}}></img>
       <div className='intro'>Message Sender</div>
       <div className='input'><Input size="medium" className='input' placeholder="Enter Name" onChange={e => setname(e.target.value)}/></div>
       <div className='input'><Input size="medium" className='input' placeholder="Enter phone number" onChange={e => setphone(e.target.value)}/></div>
