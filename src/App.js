@@ -5,12 +5,14 @@ import { useState } from 'react';
 import axios from "axios";
 import { DownOutlined, SmileOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
+import { Spin } from 'antd';
 import { Dropdown, Space } from 'antd';
 import './App.css';
 
 function App() {
   const [phone,setphone] = useState("");
   const [name,setname] = useState("");
+  const [loading,setloading] = useState(false) 
   const [message,setmessage] = useState("");
   var dict = { "Marketing message" : `Hi ${name} , Welcome to D_Paradise! Your one-stop destination for all things stylish and trendy! 
 
@@ -39,6 +41,7 @@ function App() {
   
   ];
   const sender = () =>{
+   setloading(true) 
     if (name.match(/^[A-Za-z\s]*$/)==null){
       window.alert('enter a valid name')
       window.location.reload()
@@ -53,6 +56,10 @@ function App() {
     }
     if (phone.match(/^[0-9]+$/) == null){
       window.alert('enter a valid number')
+      window.location.reload()
+    }
+    if(message.length<10){
+      window.alert('please select a message')
       window.location.reload()
     }
     axios.post(`https://api.ultramsg.com/instance46986/messages/chat?token=whq8hu6sl95rpc4b&to=+91${phone}&body=${message}`,
@@ -78,7 +85,9 @@ function App() {
         </a>
       </Dropdown>
       <div className='input'>{message}</div>
-      <Button type="primary" style={{color:'blue'}} onClick={()=>sender()}>Submit</Button>
+      <Spin spinning={loading}>
+          <Button type="primary" style={{color:'blue'}} onClick={()=>sender()}>Submit</Button>
+      </Spin>
     </div>
   );
 }
